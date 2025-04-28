@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DKategoría - Flores eternas de alta calidad que preservan la belleza natural en diseños únicos que perduran en el tiempo">
+    <title>DKategoría - Flores Eternas</title>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <style>
+        :root {
+            --amarillo-claro: #FFEBB7;
+            --naranja-claro: #FFD3B6;
+            --azul-oscuro: #0A2463;
+            --beige: #F4E9CD;
+            --amarillo-quemado: #FFB347;
+            --gris-oscuro: #333333;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--gris-oscuro);
+            background-color: var(--beige);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .main-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--amarillo-quemado);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 3rem;
+            }
+        }
+        
+        .sidenav {
+            background-color: var(--amarillo-claro);
+            width: 280px;
+        }
+        
+        .sidenav .logo-container {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .sidenav .logo-container img {
+            height: 80px;
+            max-width: 100%;
+        }
+        
+        .sidenav .menu-item {
+            color: var(--gris-oscuro);
+            font-size: 1.1rem;
+            padding: 12px 25px;
+            display: block;
+            transition: all 0.3s;
+        }
+        
+        .sidenav .menu-item:hover {
+            background-color: var(--naranja-claro);
+        }
+        
+        .sidenav .menu-item i {
+            margin-right: 15px;
+            vertical-align: middle;
+        }
+        
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 999;
+            background-color: var(--naranja-claro);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .menu-toggle i {
+            color: var(--gris-oscuro);
+            font-size: 1.5rem;
+        }
+        
+        main {
+            margin-left: 0;
+            transition: margin-left 0.3s;
+        }
+        
+        .with-sidenav {
+            margin-left: 280px;
+        }
+        
+        @media (max-width: 992px) {
+            .with-sidenav {
+                margin-left: 0;
+            }
+        }
+        
+        .hero-header {
+            background-color: var(--azul-oscuro);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .header-icons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .header-favorites, .header-cart {
+            background-color: var(--naranja-claro);
+            color: var(--gris-oscuro);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .header-favorites i, .header-cart i {
+            font-size: 1.2rem;
+        }
+        
+        .favorites-count, .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #ff4757;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .language-btn {
+            background-color: var(--naranja-claro);
+            color: var(--gris-oscuro);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+        
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            color: var(--azul-oscuro);
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .featured-container {
+            background-color: var(--amarillo-claro);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 1200px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .favorite-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #ccc;
+            z-index: 2;
+        }
+        
+        .favorite-btn:hover, .favorite-btn.active {
+            color: #ff4757;
+        }
+        
+        .product-rating {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: #ffd700;
+            background-color: rgba(0,0,0,0.5);
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            margin: 0 0 10px;
+            font-size: 1.2rem;
+            color: var(--azul-oscuro);
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+        
+        .product-occasion, .product-tag {
+            display: inline-block;
+            background-color: #f0f8ff;
+            color: #3498db;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            margin-right: 5px;
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            padding: 8px;
+            background-color: var(--naranja-claro);
+            color: var(--gris-oscuro);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        
+        .add-to-cart:hover {
+            background-color: var(--amarillo-quemado);
+        }
+        
+        .add-to-cart i {
+            margin-right: 5px;
+        }
+        
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .search-bar input {
+            padding: 10px;
+            width: 60%;
+            max-width: 500px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .search-bar button {
+            padding: 10px 15px;
+            background-color: var(--naranja-claro);
+            color: var(--gris-oscuro);
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        
+        .filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .filter-group {
+            margin-bottom: 20px;
+        }
+        
+        .filter-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .filter-group select, 
+        .filter-group input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .price-range {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .price-range input[type="range"] {
+            width: 100%;
+            margin: 10px 0;
+        }
+        
+        .price-value {
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .contact-info, .contact-form {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .info-item .material-icons {
+            margin-right: 15px;
+            color: var(--naranja-claro);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+        
+        .checkbox-group input {
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--naranja-claro);
+            color: var(--gris-oscuro);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--amarillo-quemado);
+        }
+        
+        footer {
+            background-color: var(--azul-oscuro);
+            color: white;
+            padding: 40px 5% 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .social-media h3, 
+        .quick-links h3 {
+            color: var(--amarillo-claro);
+            margin-bottom: 20px;
+        }
+        
+        .social-icons a, 
+        .quick-links a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover, 
+        .quick-links a:hover {
+            color: var(--amarillo-claro);
+        }
+        
+        .social-icons i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .footer-right-section {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .footer-logo img {
+            max-width: 120px;
+            opacity: 0.8;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-right-section {
+                flex-direction: column;
+            }
+            
+            .footer-logo {
+                margin-top: 20px;
+                text-align: center;
+            }
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            z-index: 1000;
+        }
+        .toast.success { background-color: #4CAF50; }
+        .toast.error { background-color: #F44336; }
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        a:focus, button:focus, input:focus, select:focus, textarea:focus {
+            outline: 2px solid var(--amarillo-quemado);
+            outline-offset: 2px;
+        }
+        
+        .form-group input:invalid, 
+        .form-group select:invalid, 
+        .form-group textarea:invalid {
+            border-color: #ff6b6b;
+        }
+        
+        .form-group input:valid, 
+        .form-group select:valid, 
+        .form-group textarea:valid {
+            border-color: #51cf66;
+        }
+
+        .side-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 380px;
+            height: 100%;
+            background-color: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .panel-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-title {
+            margin: 0;
+            font-size: 1.5rem;
+            color: var(--azul-oscuro);
+        }
+
+        .close-panel {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gris-oscuro);
+        }
+
+        .panel-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .empty-panel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+        }
+
+        .empty-icon {
+            font-size: 3rem;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .empty-message {
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .panel-footer {
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .total-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .total-label {
+            font-weight: bold;
+        }
+
+        .total-amount {
+            font-weight: bold;
+            color: var(--azul-oscuro);
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--azul-oscuro);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .checkout-btn:hover {
+            background-color: #0d2e7a;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .side-panel.active {
+            right: 0;
+        }
+
+        .panel-item {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .panel-item-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+
+        .panel-item-details {
+            flex: 1;
+        }
+
+        .panel-item-title {
+            margin: 0 0 5px;
+            font-weight: 600;
+        }
+
+        .panel-item-price {
+            margin: 0 0 10px;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .panel-item-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .add-to-cart-btn {
+            background-color: var(--naranja-claro);
+            color: var(--gris-oscuro);
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            margin-right: 10px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .quantity-btn {
+            width: 25px;
+            height: 25px;
+            border: 1px solid #ddd;
+            background: #f9f9f9;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quantity-input {
+            width: 40px;
+            text-align: center;
+            margin: 0 5px;
+            border: 1px solid #ddd;
+            padding: 3px;
+        }
+
+        .subtotal {
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .remove-item {
+            background: none;
+            border: none;
+            color: #ff4757;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero-header" id="inicio">
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú principal">
+            <i class="material-icons">menu</i>
+        </button>
+        
+        <div class="header-icons">
+            <button class="header-favorites" id="favoritesBtn" aria-label="Favoritos">
+                <i class="fas fa-heart"></i>
+                <span class="favorites-count">0</span>
+            </button>
+            <button class="header-cart" id="cartBtn" aria-label="Carrito de compras">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </button>
+            <button class="language-btn" id="languageBtn">ES/EN</button>
+        </div>
+        
+        <h1 class="main-title cursive">DKategoría</h1>
+        <p class="hero-subtitle">Descubre la belleza que perdura en el tiempo</p>
+    </header>
+
+    <ul class="sidenav" id="mobileMenu">
+        <li class="logo-container">
+            <img src="assets/images/Logo Tienda DKategoría (2).png" alt="DKategoría" loading="lazy">
+        </li>
+        <li><a href="#inicio" class="menu-item waves-effect">Inicio</a></li>
+        <li><a href="#marca" class="menu-item waves-effect">Nuestra Marca</a></li>
+        <li><a href="#catalogo" class="menu-item waves-effect">Catálogo</a></li>
+        <li><a href="#contacto" class="menu-item waves-effect">Contacto</a></li>
+    </ul>
+
+    <main id="mainContent">
+        <!-- Sección de productos destacados -->
+        <section class="section" id="featured">
+            <div class="container">
+                <h2 class="section-title">Productos Destacados</h2>
+                <div class="featured-container">
+                    <div class="products-grid" id="featuredProducts">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Nuestra Esencia -->
+        <section id="marca" class="section" style="background-color: var(--amarillo-claro);">
+            <div class="container">
+                <h2 class="section-title">Nuestra Esencia</h2>
+                <p class="center-align" style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+                    DKategoría ofrece flores eternas de la más alta calidad, preservando la belleza natural en diseños únicos que perduran en el tiempo.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección Catálogo -->
+        <section id="catalogo" class="section">
+            <div class="container">
+                <h2 class="section-title">Catálogo de Flores Eternas</h2>
+                
+                <div class="search-bar">
+                    <input 
+                        type="text" 
+                        id="catalogSearchInput" 
+                        placeholder="Buscar flores..." 
+                        aria-label="Buscar productos"
+                    >
+                    <button type="button" id="catalogSearchButton" aria-label="Buscar">
+                        <i class="material-icons">search</i>
+                    </button>
+                </div>
+                
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="flower-type">Tipo de flor</label>
+                        <select id="flower-type" aria-label="Filtrar por tipo de flor">
+                            <option value="">Todos</option>
+                            <option value="rosas">Rosas</option>
+                            <option value="lily">Flor Lily</option>
+                            <option value="girasoles">Girasoles</option>
+                            <option value="lavanda">Lavanda</option>
+                            <option value="tematicos">Ramos temáticos</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="occasion">Ocasión</label>
+                        <select id="occasion" aria-label="Filtrar por ocasión">
+                            <option value="">Todas</option>
+                            <option value="15años">15 Años</option>
+                            <option value="cumpleanos">Cumpleaños</option>
+                            <option value="madre">Día de la Madre</option>
+                            <option value="padre">Día del Padre</option>
+                            <option value="mujer">Día de la Mujer</option>
+                            <option value="sanvalentin">San Valentín</option>
+                            <option value="halloween">Halloween</option>
+                            <option value="navidad">Navidad</option>
+                            <option value="aniversario">Aniversario</option>
+                            <option value="graduacion">Graduación</option>
+                            <option value="boda">Boda</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="price-range">Rango de precios</label>
+                        <div class="price-range">
+                            <input type="range" id="price-range" min="0" max="100000" step="1000" value="50000" aria-label="Rango de precios">
+                            <span id="price-value" class="price-value">$0 - $50.000</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="products-grid" id="productsContainer">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="section">
+            <div class="container">
+                <h2 class="section-title">Contacta con DKategoría</h2>
+                
+                <div class="contact-container">
+                    <section class="contact-info">
+                        <h3>Información de Contacto</h3>
+                        <div class="info-item">
+                            <span class="material-icons">location_on</span>
+                            <p><strong>Ubicación:</strong> Tunja, Boyacá, Colombia</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="material-icons">phone</span>
+                            <p><strong>Teléfono:</strong> +57 322 728 3022</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="material-icons">email</span>
+                            <p><strong>Email:</strong> info@floreseternas.com</p>
+                        </div>
+                        <div class="info-item">
+                            <span class="material-icons">schedule</span>
+                            <p><strong>Horario de atención:</strong></p>
+                            <ul>
+                                <li>Lunes a Viernes: 8:00 am - 7:00 pm</li>
+                                <li>Sábados: 9:00 am - 5:00 pm</li>
+                                <li>Domingos y festivos: 10:00 am - 3:00 pm</li>
+                            </ul>
+                        </div>
+                    </section>
+                    
+                    <section class="contact-form">
+                        <h3>Formulario de Contacto</h3>
+                        <form id="contactForm" action="#" method="POST">
+                            <div class="form-group">
+                                <label for="name">Nombre completo*</label>
+                                <input type="text" id="name" name="name" required aria-required="true">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Correo electrónico*</label>
+                                <input type="email" id="email" name="email" required aria-required="true">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="reason">Motivo de contacto*</label>
+                                <select id="reason" name="reason" required aria-required="true">
+                                    <option value="">Seleccione un motivo</option>
+                                    <option value="consulta">Consulta general</option>
+                                    <option value="pedido">Realizar pedido</option>
+                                    <option value="soporte">Soporte técnico</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Mensaje*</label>
+                                <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="privacy" name="privacy" required aria-required="true">
+                                <label for="privacy">Acepto la política de privacidad y el tratamiento de mis datos*</label>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">Enviar mensaje</button>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="social-media">
+                        <h3>Síguenos en redes sociales</h3>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i> floresdkategoria</a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i> DKategoría Flores</a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i> DKategoría</a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-right-section">
+                        <div class="quick-links">
+                            <h3>Enlaces rápidos</h3>
+                            <ul>
+                                <li><a href="#inicio">Inicio</a></li>
+                                <li><a href="#catalogo">Catálogo</a></li>
+                                <li><a href="#contacto">Contacto</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-logo">
+                            <img src="assets/images/Logo Tienda DKategoría (2).png" alt="Logo DKategoría" width="120" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2025 DKategoría Flores Eternas. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <div class="toast" id="toastNotification" role="alert" aria-live="assertive"></div>
+
+    <div class="side-panel" id="favoritesPanel">
+        <div class="panel-header">
+            <h3 class="panel-title">Mis Favoritos</h3>
+            <button class="close-panel" id="closeFavorites" aria-label="Cerrar favoritos">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="panel-content" id="favoritesContent">
+            <div class="empty-panel">
+                <i class="fas fa-heart empty-icon"></i>
+                <p class="empty-message">No tienes productos en favoritos</p>
+                <button class="btn btn-primary">Ver catálogo</button>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button class="checkout-btn">Añadir todo al carrito</button>
+        </div>
+    </div>
+
+    <div class="side-panel" id="cartPanel">
+        <div class="panel-header">
+            <h3 class="panel-title">Mi Carrito</h3>
+            <button class="close-panel" id="closeCart" aria-label="Cerrar carrito">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="panel-content" id="cartContent">
+            <div class="empty-panel">
+                <i class="fas fa-shopping-cart empty-icon"></i>
+                <p class="empty-message">Tu carrito está vacío</p>
+                <button class="btn btn-primary">Ver catálogo</button>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="total-container">
+                <span class="total-label">Total:</span>
+                <span class="total-amount">$0</span>
+            </div>
+            <button class="checkout-btn">Proceder al pago</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            let favorites = {};
+            let cart = {};
+            let currentLanguage = 'es';
+            
+            const featuredProducts = [
+                {
+                    id: "oso-panda",
+                    title: "Oso Panda Floral",
+                    price: "$35.000",
+                    image: "assets/images/Oso panda floral.png",
+                    type: "tematicos",
+                    occasion: "cumpleanos",
+                    priceValue: 35000,
+                    rating: 5
+                },
+                {
+                    id: "ramo-lily",
+                    title: "Ramo Lily",
+                    price: "$35.000",
+                    image: "assets/images/Ramo Lily.jpg",
+                    type: "lily",
+                    occasion: "madre",
+                    priceValue: 35000,
+                    rating: 4
+                },
+                {
+                    id: "lily-mariposa",
+                    title: "Flor Lily con mariposa",
+                    price: "$10.000",
+                    image: "assets/images/Flor Lily con mariposa.jpg",
+                    type: "lily",
+                    occasion: "sanvalentin",
+                    priceValue: 10000,
+                    rating: 3
+                },
+                {
+                    id: "noche-estrellada",
+                    title: "Ramo noche estrellada",
+                    price: "$18.000",
+                    image: "assets/images/Ramo noche estrtellada.jpg",
+                    type: "tematicos",
+                    occasion: "15años",
+                    priceValue: 18000,
+                    rating: 4
+                }
+            ];
+
+            const allProducts = [
+                ...featuredProducts,
+                {
+                    id: "van-gogh",
+                    title: "Mini ramo Van Gogh",
+                    price: "$12.000",
+                    image: "assets/images/Mini ramo Van Gogh .jpg",
+                    type: "tematicos",
+                    occasion: "navidad",
+                    priceValue: 12000,
+                    rating: 5
+                },
+                {
+                    id: "coraline",
+                    title: "Ramo Coraline",
+                    price: "$16.000",
+                    image: "assets/images/Ramo Coraline.jpg",
+                    type: "tematicos",
+                    occasion: "halloween",
+                    priceValue: 16000,
+                    rating: 4
+                },
+                {
+                    id: "buchon",
+                    title: "Mini ramo Buchon",
+                    price: "$24.000",
+                    image: "assets/images/Mini ramo buchon .jpg",
+                    type: "tematicos",
+                    occasion: "padre",
+                    priceValue: 24000,
+                    rating: 5
+                }
+            ];
+
+            const translations = {
+                es: {
+                    featuredTitle: "Productos Destacados",
+                    catalogTitle: "Catálogo de Flores Eternas",
+                    addToCart: "Añadir",
+                    searchPlaceholder: "Buscar flores...",
+                    ourEssence: "Nuestra Esencia",
+                    contactTitle: "Contacta con DKategoría",
+                    
+                },
+                en: {
+                    featuredTitle: "Featured Products",
+                    catalogTitle: "Eternal Flowers Catalog",
+                    addToCart: "Add",
+                    searchPlaceholder: "Search flowers...",
+                    ourEssence: "Our Essence",
+                    contactTitle: "Contact DKategoría",
+                   
+                }
+            };
+
+            function changeLanguage(lang) {
+                currentLanguage = lang;
+                updateLanguageUI();
+            }
+
+            function updateLanguageUI() {
+                const t = translations[currentLanguage];
+                $('.section-title').eq(0).text(t.featuredTitle);
+                $('.section-title').eq(1).text(t.ourEssence);
+                $('.section-title').eq(2).text(t.catalogTitle);
+                $('.section-title').eq(3).text(t.contactTitle);
+                $('#catalogSearchInput').attr('placeholder', t.searchPlaceholder);
+                $('.add-to-cart').html(`<i class="fas fa-cart-plus"></i> ${t.addToCart}`);
+              
+            }
+
+            $('#languageBtn').click(function() {
+                currentLanguage = currentLanguage === 'es' ? 'en' : 'es';
+                $(this).text(currentLanguage === 'es' ? 'ES/EN' : 'EN/ES');
+                updateLanguageUI();
+            });
+
+            function renderFeaturedProducts() {
+                const $container = $('#featuredProducts');
+                $container.empty();
+                
+                featuredProducts.forEach(product => {
+                    $container.append(`
+                        <article class="product-card" tabindex="0" data-product-id="${product.id}">
+                            <div class="product-image">
+                                <button class="favorite-btn" aria-label="Añadir a favoritos" aria-pressed="false">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <img src="${product.image}" alt="${product.title}" loading="lazy">
+                                <div class="product-rating">
+                                    ${'<span class="star">★</span>'.repeat(product.rating)}
+                                    ${'<span class="star">☆</span>'.repeat(5 - product.rating)}
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">${product.title}</h3>
+                                <p class="product-price">${product.price}</p>
+                                <button class="add-to-cart" aria-label="Añadir ${product.title} al carrito">
+                                    <i class="fas fa-cart-plus"></i> ${translations[currentLanguage].addToCart}
+                                </button>
+                            </div>
+                        </article>
+                    `);
+                });
+            }
+
+            function renderAllProducts() {
+                const $container = $('#productsContainer');
+                $container.empty();
+                
+                allProducts.forEach(product => {
+                    $container.append(`
+                        <article class="product-card" tabindex="0" data-product-id="${product.id}" 
+                            data-flower-type="${product.type}" data-occasion="${product.occasion}" 
+                            data-price="${product.priceValue}">
+                            <div class="product-image">
+                                <button class="favorite-btn" aria-label="Añadir a favoritos" aria-pressed="false">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <img src="${product.image}" alt="${product.title}" loading="lazy">
+                                <div class="product-rating">
+                                    ${'<span class="star">★</span>'.repeat(product.rating)}
+                                    ${'<span class="star">☆</span>'.repeat(5 - product.rating)}
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">${product.title}</h3>
+                                <p class="product-price">${product.price}</p>
+                                <div class="product-tags">
+                                    <span class="product-tag flower-type">${getTypeName(product.type)}</span>
+                                    <span class="product-tag occasion">${getOccasionName(product.occasion)}</span>
+                                </div>
+                                <button class="add-to-cart" aria-label="Añadir ${product.title} al carrito">
+                                    <i class="fas fa-cart-plus"></i> ${translations[currentLanguage].addToCart}
+                                </button>
+                            </div>
+                        </article>
+                    `);
+                });
+            }
+            function getTypeName(type) {
+                const types = {
+                    'rosas': 'Rosas',
+                    'lily': 'Flor Lily',
+                    'girasoles': 'Girasoles',
+                    'lavanda': 'Lavanda',
+                    'tematicos': 'Ramos temáticos'
+                };
+                return types[type] || type;
+            }
+
+            function getOccasionName(occasion) {
+                const occasions = {
+                    '15años': '15 Años',
+                    'cumpleanos': 'Cumpleaños',
+                    'madre': 'Día de la Madre',
+                    'padre': 'Día del Padre',
+                    'mujer': 'Día de la Mujer',
+                    'sanvalentin': 'San Valentín',
+                    'halloween': 'Halloween',
+                    'navidad': 'Navidad',
+                    'aniversario': 'Aniversario',
+                    'graduacion': 'Graduación',
+                    'boda': 'Boda'
+                };
+                return occasions[occasion] || occasion;
+            }
+
+            renderFeaturedProducts();
+            renderAllProducts();
+            
+            $('.sidenav').sidenav({
+                edge: 'left',
+                draggable: true
+            });
+            
+            $('#menuToggle').click(function(){
+                $('.sidenav').sidenav('open');
+            });
+            
+            $('#favoritesBtn').click(function() {
+                $('#favoritesPanel').addClass('active');
+                $('#overlay').addClass('active');
+                updateFavoritesPanel();
+            });
+            
+            $('#cartBtn').click(function() {
+                $('#cartPanel').addClass('active');
+                $('#overlay').addClass('active');
+                updateCartPanel();
+            });
+            
+            $('#closeFavorites, #closeCart, #overlay').click(function() {
+                $('#favoritesPanel, #cartPanel').removeClass('active');
+                $('#overlay').removeClass('active');
+            });
+            
+            $(document).on('click', '.favorite-btn', function(e) {
+                e.stopPropagation();
+                const $btn = $(this);
+                const $card = $btn.closest('.product-card');
+                const productId = $card.data('product-id');
+                
+                const isActive = $btn.attr('aria-pressed') === 'true';
+                
+                if (isActive) {
+                    delete favorites[productId];
+                    $btn.attr('aria-pressed', 'false');
+                    $btn.removeClass('active');
+                } else {
+                    favorites[productId] = getProductData($card);
+                    $btn.attr('aria-pressed', 'true');
+                    $btn.addClass('active');
+                }
+                
+                $('.favorites-count').text(Object.keys(favorites).length);
+                
+                showToast(
+                    !isActive ? 
+                    'Añadido a favoritos' : 
+                    'Eliminado de favoritos',
+                    'success'
+                );
+            });
+            
+            $(document).on('click', '.add-to-cart', function(e) {
+                e.preventDefault();
+                const $btn = $(this);
+                const $card = $btn.closest('.product-card');
+                const productId = $card.data('product-id');
+                
+                if (!cart[productId]) {
+                    cart[productId] = {
+                        ...getProductData($card),
+                        quantity: 1
+                    };
+                } else {
+                    cart[productId].quantity += 1;
+                }
+                
+                updateCartCount();
+                
+                showToast(
+                    `${cart[productId].title} añadido al carrito`,
+                    'success'
+                );
+            });
+            
+            function updateFavoritesPanel() {
+                const $content = $('#favoritesContent');
+                
+                if (Object.keys(favorites).length === 0) {
+                    $content.html(`
+                        <div class="empty-panel">
+                            <i class="fas fa-heart empty-icon"></i>
+                            <p class="empty-message">No tienes productos en favoritos</p>
+                            <button class="btn btn-primary">Ver catálogo</button>
+                        </div>
+                    `);
+                    return;
+                }
+                
+                let html = '';
+                Object.entries(favorites).forEach(([id, product]) => {
+                    html += `
+                        <div class="panel-item" data-product-id="${id}">
+                            <img src="${product.image}" alt="${product.title}" class="panel-item-image">
+                            <div class="panel-item-details">
+                                <h4 class="panel-item-title">${product.title}</h4>
+                                <p class="panel-item-price">${product.price}</p>
+                                <div class="panel-item-actions">
+                                    <button class="add-to-cart-btn">Añadir al carrito</button>
+                                    <button class="remove-item" aria-label="Eliminar de favoritos">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                $content.html(html);
+            }
+            
+            function updateCartPanel() {
+                const $content = $('#cartContent');
+                let total = 0;
+                
+                if (Object.keys(cart).length === 0) {
+                    $content.html(`
+                        <div class="empty-panel">
+                            <i class="fas fa-shopping-cart empty-icon"></i>
+                            <p class="empty-message">Tu carrito está vacío</p>
+                            <button class="btn btn-primary">Ver catálogo</button>
+                        </div>
+                    `);
+                    $('.total-amount').text('$0');
+                    return;
+                }
+                
+                let html = '';
+                Object.entries(cart).forEach(([id, product]) => {
+                    const priceNumber = parseFloat(product.price.replace(/[^0-9.]/g, ''));
+                    const subtotal = priceNumber * product.quantity;
+                    total += subtotal;
+                    
+                    html += `
+                        <div class="panel-item" data-product-id="${id}">
+                            <img src="${product.image}" alt="${product.title}" class="panel-item-image">
+                            <div class="panel-item-details">
+                                <h4 class="panel-item-title">${product.title}</h4>
+                                <p class="panel-item-price">${product.price}</p>
+                                <div class="panel-item-actions">
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn minus">-</button>
+                                        <input type="number" min="1" value="${product.quantity}" class="quantity-input">
+                                        <button class="quantity-btn plus">+</button>
+                                    </div>
+                                    <p class="subtotal">$${subtotal.toLocaleString()}</p>
+                                    <button class="remove-item" aria-label="Eliminar del carrito">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                $content.html(html);
+                $('.total-amount').text('$' + total.toLocaleString());
+            }
+            
+            $('#favoritesContent').on('click', '.add-to-cart-btn', function() {
+                const productId = $(this).closest('.panel-item').data('product-id');
+                if (favorites[productId]) {
+                    if (!cart[productId]) {
+                        cart[productId] = {
+                            ...favorites[productId],
+                            quantity: 1
+                        };
+                    } else {
+                        cart[productId].quantity += 1;
+                    }
+                    updateCartCount();
+                    updateCartPanel();
+                    
+                    showToast(
+                        'Producto añadido al carrito',
+                        'success'
+                    );
+                }
+            });
+            
+            $('#favoritesContent').on('click', '.remove-item', function() {
+                const productId = $(this).closest('.panel-item').data('product-id');
+                delete favorites[productId];
+                updateFavoritesPanel();
+                $('.favorites-count').text(Object.keys(favorites).length);
+                
+                $(`.product-card[data-product-id="${productId}"] .favorite-btn`)
+                    .attr('aria-pressed', 'false')
+                    .removeClass('active');
+            });
+            
+            $('#cartContent').on('click', '.quantity-btn', function() {
+                const $input = $(this).siblings('.quantity-input');
+                let quantity = parseInt($input.val());
+                
+                if ($(this).hasClass('plus')) {
+                    quantity += 1;
+                } else if ($(this).hasClass('minus') && quantity > 1) {
+                    quantity -= 1;
+                }
+                
+                $input.val(quantity);
+                updateCartItemQuantity($(this).closest('.panel-item').data('product-id'), quantity);
+            });
+            
+            $('#cartContent').on('change', '.quantity-input', function() {
+                const quantity = Math.max(1, parseInt($(this).val()) || 1);
+                $(this).val(quantity);
+                updateCartItemQuantity($(this).closest('.panel-item').data('product-id'), quantity);
+            });
+            
+            $('#cartContent').on('click', '.remove-item', function() {
+                const productId = $(this).closest('.panel-item').data('product-id');
+                delete cart[productId];
+                updateCartPanel();
+                updateCartCount();
+            });
+            
+            $('#favoritesPanel').on('click', '.checkout-btn', function() {
+                Object.keys(favorites).forEach(productId => {
+                    if (!cart[productId]) {
+                        cart[productId] = {
+                            ...favorites[productId],
+                            quantity: 1
+                        };
+                    } else {
+                        cart[productId].quantity += 1;
+                    }
+                });
+                
+                updateCartCount();
+                updateCartPanel();
+                
+                showToast(
+                    'Todos los favoritos añadidos al carrito',
+                    'success'
+                );
+                
+                $('#favoritesPanel').removeClass('active');
+                $('#cartPanel').addClass('active');
+            });
+            
+            $('#flower-type, #occasion').change(filterProducts);
+            $('#catalogSearchInput').on('input', filterProducts);
+            $('#catalogSearchButton').click(filterProducts);
+            $('#price-range').on('input', function() {
+                const maxPrice = parseInt($(this).val());
+                $('#price-value').text('$0 - $' + maxPrice.toLocaleString());
+                filterProducts();
+            });
+            
+            function filterProducts() {
+                const flowerType = $('#flower-type').val();
+                const occasion = $('#occasion').val();
+                const maxPrice = parseInt($('#price-range').val());
+                const searchTerm = $('#catalogSearchInput').val().toLowerCase();
+                
+                $('#productsContainer .product-card').each(function() {
+                    const $product = $(this);
+                    const productType = $product.data('flower-type');
+                    const productOccasion = $product.data('occasion');
+                    const productPrice = parseInt($product.data('price'));
+                    const productTitle = $product.find('.product-title').text().toLowerCase();
+                    
+                    const typeMatch = !flowerType || productType === flowerType;
+                    const occasionMatch = !occasion || productOccasion === occasion;
+                    const priceMatch = productPrice <= maxPrice;
+                    const searchMatch = !searchTerm || 
+                        productTitle.includes(searchTerm) || 
+                        $product.find('.product-tag').text().toLowerCase().includes(searchTerm);
+                    
+                    if (typeMatch && occasionMatch && priceMatch && searchMatch) {
+                        $product.show();
+                    } else {
+                        $product.hide();
+                    }
+                });
+            }
+            
+            function getProductData($card) {
+                return {
+                    id: $card.data('product-id'),
+                    title: $card.find('.product-title').text(),
+                    price: $card.find('.product-price').text(),
+                    image: $card.find('img').attr('src')
+                };
+            }
+            
+            function updateCartCount() {
+                const count = Object.values(cart).reduce((total, product) => total + product.quantity, 0);
+                $('.cart-count').text(count);
+            }
+            
+            function updateCartItemQuantity(productId, quantity) {
+                if (cart[productId]) {
+                    cart[productId].quantity = quantity;
+                    updateCartPanel();
+                    updateCartCount();
+                }
+            }
+            
+            function showToast(message, type = 'success') {
+                const toast = $('#toastNotification');
+                toast.text(message)
+                    .removeClass('success error')
+                    .addClass(type)
+                    .css({
+                        'opacity': '1',
+                        'visibility': 'visible'
+                    });
+                
+                setTimeout(() => {
+                    toast.css({
+                        'opacity': '0',
+                        'visibility': 'hidden'
+                    });
+                }, 3000);
+            }
+            
+            $('#contactForm').submit(function(e) {
+                e.preventDefault();
+                
+                let isValid = true;
+                $(this).find('[required]').each(function() {
+                    if (!$(this).val()) {
+                        isValid = false;
+                        $(this).addClass('invalid');
+                    } else {
+                        $(this).removeClass('invalid');
+                    }
+                });
+                
+                if (!isValid) {
+                    showToast(
+                        'Por favor complete todos los campos requeridos',
+                        'error'
+                    );
+                    return;
+                }
+                
+                setTimeout(() => {
+                    showToast(
+                        'Mensaje enviado con éxito. Nos pondremos en contacto pronto.',
+                        'success'
+                    );
+                    $('#contactForm')[0].reset();
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
